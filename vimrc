@@ -2,29 +2,31 @@ set nocompatible              " required
 filetype off                  " required
 
 
+" Vundle config
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tomasr/molokai'
-
-Bundle 'Valloric/YouCompleteMe'
-
+Plugin 'noahfrederick/vim-hemisu'
+Plugin 'powerline/powerline'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'ivanov/vim-ipython'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
-syntax enable
+syntax on
 set background=dark
-colorscheme molokai
+colorscheme hemisu
 
 
 set nu
 
-
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
 
 set splitbelow
 set splitright
@@ -34,6 +36,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+map <C-p> :w<CR>:!python %<CR>
+
 
 
 " Enable folding
