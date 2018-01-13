@@ -1,10 +1,13 @@
-# specify a directory to install
+# specify a directory to install:
 cask_args appdir: '/Applications'
 
-#install packages:
+# install from repos:
 tap "homebrew/core"
+tap "thoughtbot/formulae"
 tap "homebrew/bundle"
 tap "caskroom/cask"
+
+#install packages:
 brew "fish"
 brew "gettext"
 brew "git"
