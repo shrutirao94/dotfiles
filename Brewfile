@@ -38,6 +38,6 @@ cask 'karabiner-elements'
 cask 'spark'
 cask 'tunnelbear'
 cask 'microsoft-office'
-
+cask 'remembear'
 
 
