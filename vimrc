@@ -5,6 +5,7 @@ filetype off                  " required
 " Vundle config
 " Initialize Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
+set shell=/bin/bash
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -16,6 +17,8 @@ Plugin 'mru.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'jalvesaq/nvim-r'
+
 
 call vundle#end()
 
@@ -63,3 +66,18 @@ nnoremap <space> za
 
 " Show partial commands
 set showcmd
+
+" Show the line the cursor is on
+set cursorline 
+
+" Visual autocomplete for command line
+set wildmenu
+
+" Show matching paranthesis
+set showmatch
+
+" Search Settings
+" Search as characters are entered
+set incsearch
+set hlsearch
+
