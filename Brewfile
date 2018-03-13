@@ -21,13 +21,10 @@ brew "wget"
 brew "zsh"
 
 # Casks:
-cask "emacs"
 cask "xquartz"
 cask 'google-chrome'
 cask 'dropbox'
 cask 'alfred'
-cask 'evernote'
-cask 'skype'
 cask 'slack'
 cask 'spotify'
 cask '1password'
