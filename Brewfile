@@ -36,5 +36,10 @@ cask 'spark'
 cask 'tunnelbear'
 cask 'microsoft-office'
 cask 'remembear'
+cask 'caffeine'
+cask 'wordpresscom'
+cask 'cleanmymac'
+cask 'bartender'
+
 
 
