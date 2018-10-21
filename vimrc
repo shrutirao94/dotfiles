@@ -11,14 +11,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'klen/python-mode'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'w0ng/vim-hybrid'
 Plugin 'gregsexton/matchtag'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'mru.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'jalvesaq/nvim-r'
-
+Plugin 'shougo/deoplete.nvim'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
 
@@ -39,7 +40,11 @@ set backspace=indent,eol,start
 set t_Co=256
 syntax on
 set background=dark
-colorscheme hybrid 
+colorscheme spacegray 
+let g:spacegray_use_italics = 1
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 
 set number
