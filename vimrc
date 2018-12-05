@@ -1,25 +1,30 @@
+" ============================================================================
+" .vimrc - Shruti Rao 
+" ============================================================================
+"
 set nocompatible              " required
 filetype off                  " required
 
+" ============================================================================
+" Plug Block  
+" ============================================================================
+"
 
-" Vundle config
-" Initialize Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
 set shell=/bin/bash
 
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'klen/python-mode'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'gregsexton/matchtag'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'mru.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'scrooloose/nerdcommenter'
+Plug 'gmarik/Vundle.vim'
+Plug 'klen/python-mode'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'gregsexton/matchtag'
+Plug 'flazz/vim-colorschemes'
+Plug 'mru.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdcommenter'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on    " required
 
@@ -31,6 +36,7 @@ set expandtab     " insert spaces when hitting TABs
 set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
+
 
 " Set backspace to work correctly
 set backspace=indent,eol,start
@@ -66,9 +72,6 @@ nnoremap <space> za
 " Show partial commands
 set showcmd
 
-" Show the line the cursor is on
-set cursorline 
-
 " Visual autocomplete for command line
 set wildmenu
 
@@ -79,4 +82,3 @@ set showmatch
 " Search as characters are entered
 set incsearch
 set hlsearch
-
