@@ -17,8 +17,6 @@ Plugin 'mru.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'jalvesaq/nvim-r'
-Plugin 'shougo/deoplete.nvim'
 Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
@@ -42,10 +40,6 @@ syntax on
 set background=dark
 colorscheme spacegray 
 let g:spacegray_use_italics = 1
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
 
 set number
 set noswapfile
