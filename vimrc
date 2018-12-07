@@ -22,7 +22,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'valloric/youcompleteme'
 
 call plug#end()
 
@@ -79,11 +78,15 @@ set showmatch
 set incsearch
 set hlsearch
 
+
+
 " ============================================================================
 " FZF  
 " ============================================================================
 "
 map ; :Files<CR>
+
+
 
 " ============================================================================
 " NERDTREE  
