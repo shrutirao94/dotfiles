@@ -22,6 +22,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -35,6 +36,9 @@ set autoindent    " align the new line indent with the previous line
 
 " Set backspace to work correctly
 set backspace=indent,eol,start
+
+" Set mapleader
+let mapleader = " "
 
 set t_Co=256
 syntax on
@@ -61,8 +65,8 @@ map <C-p> :w<CR>:!python %<CR>
 set foldmethod=indent
 set foldlevel=99
 
-" Enable folding with the spacebar
-nnoremap <space> za
+" Set leader key
+
 
 " Show partial commands
 set showcmd
@@ -85,7 +89,7 @@ set hlsearch
 " ============================================================================
 "
 map ; :Files<CR>
-
+nmap <leader>h :Helptags<CR>
 
 
 " ============================================================================
@@ -97,3 +101,5 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd vimenter * NERDTree
 " lose vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
