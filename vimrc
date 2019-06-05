@@ -23,6 +23,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
 call plug#end()
 
@@ -33,7 +34,7 @@ set expandtab     " insert spaces when hitting TABs
 set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
-
+set encoding=utf-8
 " Set backspace to work correctly
 set backspace=indent,eol,start
 
@@ -102,4 +103,10 @@ autocmd vimenter * NERDTree
 " lose vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
+" ============================================================================
+" LATEX  
+" ============================================================================
+"
+autocmd FileType tex nmap <buffer> <S-L> :!latexmk -pdf %<CR>
 
