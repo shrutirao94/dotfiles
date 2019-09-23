@@ -12,7 +12,7 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 set shell=/bin/bash
-
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'gregsexton/matchtag'
 Plug 'flazz/vim-colorschemes'
