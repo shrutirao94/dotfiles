@@ -63,6 +63,7 @@ nnoremap <C-H> <C-W><C-H>
 map <C-p> :w<CR>:!python %<CR>
 
 " Enable folding
+set foldmethod=manual
 set foldmethod=indent
 set foldlevel=99
 
