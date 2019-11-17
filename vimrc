@@ -47,6 +47,8 @@ set background=dark
 colorscheme spacegray 
 let g:spacegray_use_italics = 1
 
+set clipboard=unnamed
+
 set number
 set noswapfile
 " automatically reload vimrc when it's saved
