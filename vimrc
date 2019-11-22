@@ -13,6 +13,7 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 set shell=/bin/bash
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'lervag/vimtex'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'gregsexton/matchtag'
 Plug 'flazz/vim-colorschemes'
@@ -111,8 +112,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " LATEX  
 " ============================================================================
 "
-autocmd FileType tex nmap <buffer> <S-L> :!latexmk -pdf %<CR>
-
+"autocmd FileType tex nmap <buffer> <S-L> :!latexmk -pdf %<CR>
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'open -a Preview'
+let g:tex_flavor='latex'
+"let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 
 " ============================================================================
