@@ -57,6 +57,9 @@ augroup BgHighlight
     autocmd WinLeave * set colorcolumn=0
 augroup END
 
+" Allow new buffers to resize automatically
+autocmd VimResized * wincmd =
+
 " Dim inactive windows using 'colorcolumn' setting
 "if exists('+colorcolumn')
   "function! s:DimInactiveWindows()
