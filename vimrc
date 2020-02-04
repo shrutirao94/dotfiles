@@ -1,12 +1,12 @@
 " ============================================================================
-" .vimrc - Shruti Rao 
+" .vimrc - Shruti Rao
 " ============================================================================
 "
 set nocompatible              " required
 filetype off                  " required
 
 " ============================================================================
-" Plug Block  
+" Plug Block
 " ============================================================================
 "
 
@@ -25,7 +25,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme', { 'do': './install.py' }
-
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 set textwidth=79  " lines longer than 79 columns will be broken
@@ -124,7 +124,7 @@ set hlsearch
 
 
 " ============================================================================
-" FZF  
+" FZF
 " ============================================================================
 "
 map ; :Files<CR>
@@ -132,7 +132,7 @@ nmap <leader>h :Helptags<CR>
 
 
 " ============================================================================
-" NERDTREE  
+" NERDTREE
 " ============================================================================
 "
 map <C-n> :NERDTreeToggle<CR>
@@ -143,7 +143,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 " ============================================================================
-" LATEX  
+" LATEX
 " ============================================================================
 "
 "autocmd FileType tex nmap <buffer> <S-L> :!latexmk -pdf %<CR>
@@ -157,7 +157,7 @@ let g:tex_conceal='abdmg'
 
 
 " ============================================================================
-" YOUCOMPLETEME  
+" YOUCOMPLETEME
 " ============================================================================
 "
 let g:ycm_python_interpreter_path = ''
