@@ -48,6 +48,36 @@ set background=dark
 colorscheme spacegray 
 let g:spacegray_use_italics = 1
 
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set colorcolumn=80
+    autocmd WinLeave * set colorcolumn=0
+augroup END
+
+" Dim inactive windows using 'colorcolumn' setting
+"if exists('+colorcolumn')
+  "function! s:DimInactiveWindows()
+    "for i in range(1, tabpagewinnr(tabpagenr(), '$'))
+      "let l:range = ""
+      "if i != winnr()
+        "if &wrap
+         "let l:width=256 " max
+        "else
+         "let l:width=winwidth(i)
+        "endif
+        "let l:range = join(range(1, l:width), ',')
+      "endif
+      "call setwinvar(i, '&colorcolumn', l:range)
+    "endfor
+  "endfunction
+  "augroup DimInactiveWindows
+    "au!
+    "au WinEnter * call s:DimInactiveWindows()
+    "au WinEnter * set cursorline
+    "au WinLeave * set nocursorline
+  "augroup END
+"endif
+
 set clipboard=unnamed
 
 set number
@@ -57,6 +87,10 @@ au BufWritePost .vimrc so ~/.vimrc
 
 set splitbelow
 set splitright
+
+"Show trailing white spaces
+set list
+set listchars=tab:›\ ,eol:¬,trail:⋅
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -113,8 +147,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " ============================================================================
 "
 "autocmd FileType tex nmap <buffer> <S-L> :!latexmk -pdf %<CR>
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Preview'
+"autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'open -a Skim'
 let g:tex_flavor='latex'
 "let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
@@ -133,3 +167,5 @@ let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_sys_path'
   \]
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
+
+se mouse+=a
