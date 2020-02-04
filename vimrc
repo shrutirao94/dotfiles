@@ -91,7 +91,7 @@ set splitright
 
 "Show trailing white spaces
 set list
-set listchars=tab:›\ ,eol:¬,trail:⋅
+set listchars=tab:›\ ,trail:⋅
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
