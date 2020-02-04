@@ -1,14 +1,14 @@
 " ============================================================================
 " .vimrc - Shruti Rao
 " ============================================================================
-"
+
 set nocompatible              " required
 filetype off                  " required
+
 
 " ============================================================================
 " Plug Block
 " ============================================================================
-"
 
 call plug#begin('~/.vim/plugged')
 set shell=/bin/bash
@@ -17,6 +17,7 @@ Plug 'lervag/vimtex'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'gregsexton/matchtag'
 Plug 'flazz/vim-colorschemes'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -37,6 +38,7 @@ set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
 set encoding=utf-8
+
 " Set backspace to work correctly
 set backspace=indent,eol,start
 
@@ -46,8 +48,8 @@ let mapleader = " "
 set t_Co=256
 syntax on
 set background=dark
-colorscheme spacegray 
-let g:spacegray_use_italics = 1
+colorscheme onedark
+let g:onedark_terminal_italics = 1
 
 augroup BgHighlight
     autocmd!
@@ -101,11 +103,11 @@ nnoremap <C-H> <C-W><C-H>
 map <C-p> :w<CR>:!python %<CR>
 
 "Set true colours"
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+"if exists('+termguicolors')
+  "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  "set termguicolors
+"endif
 
 " Enable folding
 set foldmethod=manual
@@ -130,11 +132,10 @@ set incsearch
 set hlsearch
 
 
-
 " ============================================================================
 " FZF
 " ============================================================================
-"
+
 map ; :Files<CR>
 nmap <leader>h :Helptags<CR>
 
@@ -142,7 +143,7 @@ nmap <leader>h :Helptags<CR>
 " ============================================================================
 " NERDTREE
 " ============================================================================
-"
+
 map <C-n> :NERDTreeToggle<CR>
 
 autocmd vimenter * NERDTree
@@ -153,7 +154,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " ============================================================================
 " LATEX
 " ============================================================================
-"
+
 "autocmd FileType tex nmap <buffer> <S-L> :!latexmk -pdf %<CR>
 "autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Skim'
@@ -167,7 +168,7 @@ let g:tex_conceal='abdmg'
 " ============================================================================
 " YOUCOMPLETEME
 " ============================================================================
-"
+
 let g:ycm_python_interpreter_path = ''
 let g:ycm_python_sys_path = []
 let g:ycm_extra_conf_vim_data = [
@@ -177,11 +178,12 @@ let g:ycm_extra_conf_vim_data = [
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 se mouse+=a
-"
+
+
 " ============================================================================
 " AIRLINE
 " ============================================================================
-"
+
 "Smarter tab line
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='minimalist'
