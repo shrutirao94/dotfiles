@@ -26,6 +26,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 set textwidth=79  " lines longer than 79 columns will be broken
@@ -169,3 +170,11 @@ let g:ycm_extra_conf_vim_data = [
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 se mouse+=a
+"
+" ============================================================================
+" AIRLINE
+" ============================================================================
+"
+"Smarter tab line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='minimalist'
