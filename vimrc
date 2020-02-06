@@ -27,6 +27,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
+Plug 'KabbAmine/zeavim.vim'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
@@ -166,6 +167,9 @@ let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+let g:vimtex_fold_enabled=0
+let g:vimtex_indent_available=0
+let g:vimtex_syntax_enabled=0
 
 
 " ============================================================================
@@ -179,6 +183,11 @@ let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_sys_path'
   \]
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
+
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 se mouse+=a
 
