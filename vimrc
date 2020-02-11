@@ -12,7 +12,7 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 set shell=/bin/bash
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'lervag/vimtex'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'gregsexton/matchtag'
@@ -31,6 +31,11 @@ Plug 'KabbAmine/zeavim.vim'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+
+" ============================================================================
+" UI Settings
+" ============================================================================
+
 set textwidth=79  " lines longer than 79 columns will be broken
 set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
 set tabstop=4     " a hard TAB displays as 4 columns
@@ -44,7 +49,8 @@ set encoding=utf-8
 set backspace=indent,eol,start
 
 " Set mapleader
-let mapleader = " "
+let mapleader = "\<Space>"
+let localmapleader = "\\"
 
 set t_Co=256
 syntax on
@@ -89,6 +95,7 @@ set clipboard=unnamed
 
 set number
 set noswapfile
+
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
 
@@ -99,28 +106,6 @@ set splitright
 set list
 set listchars=tab:›\ ,trail:⋅
 
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-map <C-p> :w<CR>:!python %<CR>
-
-"Set true colours"
-"if exists('+termguicolors')
-  "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  "set termguicolors
-"endif
-
-" Enable folding
-set foldmethod=manual
-set foldmethod=indent
-set foldlevel=99
-
-" Set leader key
-
-
 " Show partial commands
 set showcmd
 
@@ -130,7 +115,33 @@ set wildmenu
 " Show matching paranthesis
 set showmatch
 
-" Search Settings
+
+" ============================================================================
+" Navigation
+" ============================================================================
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+map <C-p> :w<CR>:!python %<CR>
+
+
+" ============================================================================
+" Folding
+" ============================================================================
+
+set foldmethod=manual
+set foldmethod=indent
+set foldlevel=99
+nnoremap <s-tab> za
+set foldlevelstart=1
+
+" ============================================================================
+" Search
+" ============================================================================
+
 " Search as characters are entered
 set incsearch
 set hlsearch
@@ -147,7 +158,6 @@ nmap <leader>h :Helptags<CR>
 " ============================================================================
 " NERDTREE
 " ============================================================================
-
 map <C-n> :NERDTreeToggle<CR>
 
 autocmd vimenter * NERDTree
@@ -159,12 +169,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " LATEX
 " ============================================================================
 
-"autocmd FileType tex nmap <buffer> <S-L> :!latexmk -pdf %<CR>
-"autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Skim'
+
 let g:tex_flavor='latex'
-"let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
+let g:vimtex_view_method = 'skim'
 set conceallevel=1
 let g:tex_conceal='abdmg'
 let g:vimtex_fold_enabled=0
