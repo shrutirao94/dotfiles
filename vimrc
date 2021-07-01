@@ -29,6 +29,7 @@ Plug 'valloric/youcompleteme', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 
@@ -207,3 +208,9 @@ se mouse+=a
 "Smarter tab line
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='minimalist'
+
+" ============================================================================
+" DATETIME
+" ============================================================================
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
