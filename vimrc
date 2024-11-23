@@ -5,7 +5,6 @@
 set nocompatible              " required
 filetype off                  " required
 
-
 " ============================================================================
 " Plug Block
 " ============================================================================
@@ -16,8 +15,7 @@ set shell=/bin/bash
 Plug 'lervag/vimtex'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'gregsexton/matchtag'
-Plug 'flazz/vim-colorschemes'
-Plug 'joshdick/onedark.vim'
+Plug 'wadackel/vim-dogrun'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -30,7 +28,6 @@ Plug 'KabbAmine/zeavim.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-repeat'
 call plug#end()
-
 
 " ============================================================================
 " UI Settings
@@ -55,7 +52,7 @@ let localmapleader = "\\"
 set t_Co=256
 syntax on
 set background=dark
-colorscheme onedark
+colorscheme dogrun 
 let g:onedark_terminal_italics = 1
 
 augroup BgHighlight
@@ -115,7 +112,6 @@ set wildmenu
 " Show matching paranthesis
 set showmatch
 
-
 " ============================================================================
 " Navigation
 " ============================================================================
@@ -126,7 +122,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 map <C-p> :w<CR>:!python %<CR>
-
 
 " ============================================================================
 " Folding
@@ -146,14 +141,12 @@ set foldlevelstart=1
 set incsearch
 set hlsearch
 
-
 " ============================================================================
 " FZF
 " ============================================================================
 
 map ; :Files<CR>
 nmap <leader>h :Helptags<CR>
-
 
 " ============================================================================
 " NERDTREE
@@ -164,11 +157,9 @@ autocmd vimenter * NERDTree
 " lose vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
 " ============================================================================
 " LATEX
 " ============================================================================
-
 
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
@@ -178,7 +169,6 @@ let g:tex_conceal='abdmg'
 let g:vimtex_fold_enabled=0
 let g:vimtex_indent_available=0
 let g:vimtex_syntax_enabled=0
-
 
 " ============================================================================
 " YOUCOMPLETEME
@@ -199,14 +189,13 @@ au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 se mouse+=a
 
-
 " ============================================================================
 " AIRLINE
 " ============================================================================
 
 "Smarter tab line
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='minimalist'
+let g:airline_theme='dogrun'
 
 " ============================================================================
 " DATETIME
